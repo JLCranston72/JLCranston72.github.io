@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J.L. Cranston</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1B2430;
+    --paper: #F1ECE1;
+    --paper-raised: #E8E1D2;
+    --pine: #3F6259;
+    --pine-deep: #2C4640;
+    --rust: #A6472F;
+    --stone: #6B6558;
+    --stone-light: #A39C8C;
+    --rule: rgba(27, 36, 48, 0.14);
+    --shadow: rgba(27, 36, 48, 0.08);
+  }
+
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --ink: #EDE8DC;
+      --paper: #14181F;
+      --paper-raised: #1C222B;
+      --pine: #6FA091;
+      --pine-deep: #8FBAAC;
+      --rust: #D07A61;
+      --stone: #A9A192;
+      --stone-light: #6B6558;
+      --rule: rgba(237, 232, 220, 0.16);
+      --shadow: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #EDE8DC;
+    --paper: #14181F;
+    --paper-raised: #1C222B;
+    --pine: #6FA091;
+    --pine-deep: #8FBAAC;
+    --rust: #D07A61;
+    --stone: #A9A192;
+    --stone-light: #6B6558;
+    --rule: rgba(237, 232, 220, 0.16);
+    --shadow: rgba(0, 0, 0, 0.3);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Spectral', Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- Header ---------- */
+  header.site {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .byline {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    color: var(--stone);
+    margin: 0 0 14px;
+    text-transform: uppercase;
+  }
+
+  h1.name {
+    font-size: clamp(2.6rem, 7vw, 4.2rem);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    margin: 0 0 20px;
+    line-height: 1.05;
+  }
+
+  .tagline {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--stone);
+    max-width: 34em;
+    margin: 0;
+  }
+
+  /* ---------- Book shelf ---------- */
+  section.shelf {
+    padding: 88px 0;
+  }
+
+  .shelf-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    color: var(--stone);
+    text-transform: uppercase;
+    margin: 0 0 40px;
+  }
+
+  .book {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+    align-items: start;
+    margin-bottom: 96px;
+  }
+
+  .book:last-child { margin-bottom: 0; }
+
+  .book.reverse {
+    grid-template-columns: 1fr 220px;
+  }
+  .book.reverse .cover { order: 2; }
+  .book.reverse .copy { order: 1; }
+
+  .cover {
+    aspect-ratio: 5 / 8;
+    border-radius: 2px;
+    display: flex;
+    align-items: flex-end;
+    padding: 22px 18px;
+    box-shadow: 0 18px 40px -18px var(--shadow), 0 2px 8px var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover-title {
+    font-size: 1.15rem;
+    line-height: 1.22;
+    font-weight: 500;
+    color: #F1ECE1;
+    margin: 0;
+  }
+
+  .cover-author {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: rgba(241, 236, 225, 0.72);
+    margin: 10px 0 0;
+    text-transform: uppercase;
+  }
+
+  .cover.ofh {
+    background:
+      radial-gradient(circle at 25% 20%, rgba(255,255,255,0.10), transparent 45%),
+      linear-gradient(155deg, #2C4640 0%, #1B2430 78%);
+  }
+
+  .cover.sovw {
+    background:
+      radial-gradient(circle at 70% 15%, rgba(255,255,255,0.14), transparent 50%),
+      linear-gradient(160deg, #A6472F 0%, #4A2320 85%);
+  }
+  .cover.sovw .cover-title { font-style: italic; }
+
+  .cover.twpp {
+    background: linear-gradient(150deg, #6B8478 0%, #3F6259 100%);
+  }
+
+  .cover.gilgamesh {
+    background: linear-gradient(150deg, #3A3226 0%, #14181F 100%);
+  }
+
+  .genre-tag {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--pine);
+    margin: 0 0 12px;
+  }
+
+  .book h2 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .book p.blurb {
+    color: var(--ink);
+    max-width: 42em;
+    margin: 0 0 22px;
+    font-size: 1.02rem;
+  }
+
+  .book-links {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+  }
+
+  a.buy {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+  }
+  a.buy:hover { color: var(--pine); border-color: var(--pine); }
+
+  /* ---------- More to come ---------- */
+  section.horizon {
+    padding: 0 0 96px;
+  }
+
+  .horizon-list {
+    border-top: 1px solid var(--rule);
+  }
+
+  .horizon-item {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 40px;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .horizon-item .cover {
+    aspect-ratio: 5/8;
+    height: auto;
+  }
+  .horizon-item .cover-title { font-size: 0.66rem; }
+  .horizon-item .cover-author { font-size: 0.5rem; }
+
+  .horizon-item h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0 0 8px;
+  }
+
+  .horizon-item .status {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin: 0 0 10px;
+  }
+
+  .horizon-item p {
+    color: var(--stone);
+    font-style: italic;
+    margin: 0;
+    max-width: 40em;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 48px 0 72px;
+    border-top: 1px solid var(--rule);
+  }
+
+  footer p {
+    color: var(--stone);
+    font-size: 0.95rem;
+    max-width: 42em;
+    margin: 0;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 640px) {
+    .wrap { padding: 0 22px; }
+    header.site { padding: 52px 0 40px; }
+    section.shelf { padding: 56px 0; }
+    .book, .book.reverse {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .book.reverse .cover { order: 1; }
+    .book.reverse .copy { order: 2; }
+    .cover { width: 160px; }
+    .horizon-item {
+      grid-template-columns: 72px 1fr;
+      gap: 20px;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--pine);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="site">
+    <p class="byline">Fiction</p>
+    <h1 class="name">J.L. Cranston</h1>
+    <p class="tagline">Stories about the people left standing when the water rises, the sun sets wrong, or the summer finally ends.</p>
+  </header>
+
+  <section class="shelf">
+    <p class="shelf-label">Available now</p>
+
+    <div class="book">
+      <div class="cover ofh">
+        <div>
+          <p class="cover-title">OCEAN<br>FROM HERE</p>
+          <p class="cover-author">J.L. Cranston</p>
+        </div>
+      </div>
+      <div class="copy">
+        <p class="genre-tag">YA · Adventure</p>
+        <h2>Ocean From Here</h2>
+        <p class="blurb">The city was supposed to be empty. Four runaways call the flooded ruins of New York home, until they find an abandoned baby &mdash; a casualty of population laws in a world drowning under climate collapse. To find her a safe home, they'll cross a drowning skyline, engineered farmland, and futuristic cities, desperate to keep the girl alive, even if it costs their friendship.</p>
+        <div class="book-links">
+          <a class="buy" href="#">Read on Amazon</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="book reverse">
+      <div class="cover sovw">
+        <div>
+          <p class="cover-title">Sun on<br>Vacant Waters</p>
+          <p class="cover-author">J.L. Cranston</p>
+        </div>
+      </div>
+      <div class="copy">
+        <p class="genre-tag">Horror · Novella</p>
+        <h2>Sun on Vacant Waters</h2>
+        <p class="blurb">Two men find a beach on the fourth floor of a downtown office building. No ocean for a thousand miles, no explanation &mdash; just sand and a sun that shouldn't be there. They should probably leave. Instead, they wonder what's on the other floors.</p>
+        <div class="book-links">
+          <a class="buy" href="#">Read on Amazon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="horizon">
+    <p class="shelf-label">More to come</p>
+    <div class="horizon-list">
+      <div class="horizon-item">
+        <div class="cover twpp">
+          <div>
+            <p class="cover-title">The White Pine<br>Planetarium</p>
+            <p class="cover-author">J.L. Cranston</p>
+          </div>
+        </div>
+        <div>
+          <p class="status">Coming soon</p>
+          <h3>The White Pine Planetarium</h3>
+          <p>Four college students answer a strange flyer and spend a summer at a mountain cabin they didn't know they needed.</p>
+        </div>
+      </div>
+      <div class="horizon-item">
+        <div class="cover gilgamesh">
+          <div>
+            <p class="cover-title">Gilgamesh</p>
+            <p class="cover-author">J.L. Cranston</p>
+          </div>
+        </div>
+        <div>
+          <p class="status">Coming soon</p>
+          <h3>Gilgamesh</h3>
+          <p>An old story, told new: what a person will risk, and lose, in the search for something that lasts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>J.L. Cranston writes fiction about people at the edge of the world they thought they knew. New releases roughly once a year.</p>
+  </footer>
+</div>
+
+</body>
+</html>
