@@ -13,7 +13,7 @@
 
 <nav class="site-nav">
   <div class="nav-inner">
-    <a class="nav-brand" href="index.html">J.L. Cranston</a>
+    <a class="nav-brand" href="index.html"><img src="images/logo.png" alt="" class="nav-logo">J.L. Cranston</a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="short-fiction.html">Short Fiction</a></li>
@@ -27,9 +27,22 @@
   <header class="page">
     <h1>Contact</h1>
   </header>
-  <div class="page-body">
-    <p>More soon.</p>
-  </div>
+  <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <div>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="_replyto" required>
+    </div>
+    <div>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <button type="submit">Send message</button>
+    <p class="form-note">Messages go straight to my inbox &mdash; I read everything, and I'll get back to you when I can.</p>
+  </form>
 </div>
 
 <footer>
