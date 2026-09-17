@@ -169,8 +169,12 @@ header.page h1 {
   padding: 64px 0 96px;
   color: var(--stone);
   font-style: italic;
-  font-size: 1.05rem;
+  font-size: 1.22rem;
   max-width: 40em;
+}
+
+.page-body p {
+  margin: 0 0 22px;
 }
 
 /* ---------- Book shelf ---------- */
