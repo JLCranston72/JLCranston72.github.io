@@ -29,11 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') dismiss();
   });
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    // NOTE: this form does not currently send anywhere.
-    // Connect it to a mailing list provider (see the setup notes) to actually collect emails.
-    form.innerHTML = '<p style="margin:0; color: var(--pine);">Thanks &mdash; you\'re on the list.</p>';
-    dismiss();
+  form.addEventListener('submit', function () {
+    // Buttondown's own onsubmit handler (inline on the form) opens the
+    // confirmation in a popup window; this just closes our modal a beat later
+    // so it doesn't linger on screen while that popup opens.
+    setTimeout(dismiss, 300);
   });
 });

@@ -111,9 +111,17 @@ The impossible find makes them question their reality...until one of them thinks
     <button class="modal-close" aria-label="Close">&times;</button>
     <h2>Stay in the loop</h2>
     <p>New releases, roughly once a year, and nothing else.</p>
-    <form class="modal-form">
-      <input type="email" placeholder="you@email.com" required aria-label="Email address">
-      <button type="submit">Sign up</button>
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/jl-941863"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.com/api/emails/embed-subscribe/jl-941863', 'popupwindow')"
+      class="modal-form embeddable-buttondown-form"
+    >
+      <label for="bd-email" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 0.8rem; color: var(--stone);">Email address</label>
+      <input type="email" name="email" id="bd-email" placeholder="you@email.com" required>
+      <button type="submit">Subscribe</button>
+      <p class="modal-note"><a href="https://buttondown.com/refer/jl-941863" target="_blank" rel="noopener">Powered by Buttondown</a></p>
     </form>
   </div>
 </div>
