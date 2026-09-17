@@ -94,7 +94,6 @@ nav.site-nav {
   display: block;
 }
 
-:root:not([data-theme="light"]) .nav-logo,
 :root[data-theme="dark"] .nav-logo {
   filter: invert(1) brightness(1.6);
 }
