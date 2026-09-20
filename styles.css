@@ -177,6 +177,56 @@ header.page h1 {
   margin: 0 0 22px;
 }
 
+/* ---------- About page ---------- */
+.about-hero {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 52px;
+  align-items: center;
+  padding: 72px 0 88px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.about-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+:root[data-theme="dark"] .about-logo {
+  filter: invert(1) brightness(1.6);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .about-logo { filter: invert(1) brightness(1.6); }
+}
+
+.about-text h1 {
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  font-weight: 500;
+  margin: 0 0 26px;
+}
+
+.about-text p {
+  color: var(--stone);
+  font-style: italic;
+  font-size: 1.15rem;
+  max-width: 42em;
+  margin: 0 0 18px;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .about-hero {
+    grid-template-columns: 96px 1fr;
+    gap: 24px;
+    padding: 48px 0 56px;
+    align-items: start;
+  }
+}
+
 /* ---------- Book shelf ---------- */
 section.shelf {
   padding: 88px 0;
