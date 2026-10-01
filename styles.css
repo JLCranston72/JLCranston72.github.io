@@ -652,8 +652,11 @@ a.continue:hover { color: var(--pine-deep); border-color: var(--pine-deep); }
   .book.reverse .copy { order: 2; }
   .cover { width: 160px; }
   .horizon-item {
-    grid-template-columns: 72px 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .horizon-item .cover {
+    display: none;
   }
 }
 
