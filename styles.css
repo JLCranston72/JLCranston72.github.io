@@ -257,7 +257,7 @@ section.shelf {
   display: grid;
   grid-template-columns: 220px 1fr;
   gap: 56px;
-  align-items: start;
+  align-items: center;
   margin-bottom: 96px;
 }
 
