@@ -229,10 +229,13 @@ header.page h1 {
 
 @media (max-width: 640px) {
   .about-hero {
-    grid-template-columns: 96px 1fr;
+    grid-template-columns: 1fr;
     gap: 24px;
     padding: 48px 0 56px;
     align-items: start;
+  }
+  .about-photo {
+    display: none;
   }
 }
 
