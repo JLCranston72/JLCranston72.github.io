@@ -180,9 +180,9 @@ header.page h1 {
 /* ---------- About page ---------- */
 .about-hero {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: 52px;
-  align-items: center;
+  align-items: start;
   padding: 72px 0 88px;
   border-bottom: 1px solid var(--rule);
 }
@@ -205,7 +205,7 @@ header.page h1 {
   height: auto;
   display: block;
   border-radius: 2px;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
 }
 
