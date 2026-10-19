@@ -671,3 +671,9 @@ a.continue:hover { color: var(--pine-deep); border-color: var(--pine-deep); }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+.nav-links { align-items: center; }
+.nav-links .nav-social { display: flex; align-items: center; }
+.nav-links .nav-social svg { display: block; }
+@media (max-width: 640px) {
+  .nav-links { flex-wrap: wrap; gap: 14px 20px; }
+}
